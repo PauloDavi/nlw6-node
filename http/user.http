@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:3001
+@contentType = application/json
+@baseEndPoint = users
+
+### Create a user
+POST {{baseUrl}}/{{baseEndPoint}}
+Content-Type: {{contentType}}
+
+{
+  "name": "teste",
+  "email": "teste@gmail.cpm"
+}
