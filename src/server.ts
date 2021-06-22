@@ -1,13 +1,16 @@
-import express from 'express';
+import 'reflect-metadata';
+import 'dotenv/config';
+import './database';
+
+import express, { json } from 'express';
+
+import { router } from './routes';
 
 const app = express();
 
-app.get('test', (request, response) => {
-  return response.send('Olá NLW');
-});
+app.use(json());
+app.use(router);
 
-app.post('test-post', (request, response) => {
-  return response.send('Olá NLW método POST');
-});
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => console.log('server is running in port 3000'));
+app.listen(port, () => console.log(`server is running in port ${port}`));
