@@ -22,6 +22,7 @@ export class CreateUsers1624321093169 implements MigrationInterface {
           {
             name: 'admin',
             type: 'boolean',
+            isNullable: true,
             default: false,
           },
           {

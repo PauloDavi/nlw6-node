@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { getCustomRepository } from 'typeorm';
 
 import { CreateUserService } from '../services/CreateUserService';
 
@@ -7,9 +6,9 @@ class CreateUserController {
   async handle(request: Request, response: Response) {
     const { name, email, admin } = request.body;
 
-    const createUserService = getCustomRepository(CreateUserService);
+    const createUserService = new CreateUserService();
 
-    const user = createUserService.execute({
+    const user = await createUserService.execute({
       name,
       email,
       admin,
