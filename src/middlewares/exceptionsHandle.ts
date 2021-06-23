@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextFunction, Request, Response } from 'express';
 
-import { CustomExceptions } from '../exceptions/CustomExceptions';
+import { CustomException } from '../exceptions/CustomException';
 
 function exceptionsHandle(
-  error: CustomExceptions,
+  error: CustomException,
   _request: Request,
   response: Response,
   _Next: NextFunction,
@@ -15,6 +15,7 @@ function exceptionsHandle(
     return response.status(error.statusCode).json({
       statusCode: error.statusCode,
       message: error.message,
+      ...(error.data ? error.data : {}),
     });
   }
 

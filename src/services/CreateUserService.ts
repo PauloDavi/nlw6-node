@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
 
-import { CustomExceptions } from '../exceptions/CustomExceptions';
+import { CustomException } from '../exceptions/CustomException';
 import { UsersRepositories } from '../repositories/UsersRepositories';
 
 interface UserRequest {
@@ -16,7 +16,7 @@ class CreateUserService {
     const userAlreadyExists = await usersRepositories.findOne({ email });
 
     if (userAlreadyExists) {
-      throw new CustomExceptions('User already exists.', 400);
+      throw new CustomException('User already exists.', 400);
     }
 
     const user = usersRepositories.create({
