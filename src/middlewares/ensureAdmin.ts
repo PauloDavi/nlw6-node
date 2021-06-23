@@ -1,16 +1,15 @@
 import { NextFunction, Request, Response } from 'express';
 
+import { CustomExceptions } from '../exceptions/CustomExceptions';
+
 function ensureAdmin(request: Request, response: Response, next: NextFunction) {
   const admin = true;
 
-  if (admin) {
-    return next();
+  if (!admin) {
+    throw new CustomExceptions('User is unauthorized', 401);
   }
 
-  return response.status(401).json({
-    statusCode: 401,
-    message: 'User is unauthorized',
-  });
+  return next();
 }
 
 export { ensureAdmin };

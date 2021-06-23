@@ -1,0 +1,11 @@
+@baseUrl = http://localhost:3001
+@contentType = application/json
+@baseEndPoint = tags
+
+### Create a tag
+POST {{baseUrl}}/{{baseEndPoint}}
+Content-Type: {{contentType}}
+
+{
+  "name": "teste"
+}
