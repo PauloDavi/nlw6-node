@@ -1,5 +1,6 @@
-class CustomException extends Error {
+class CustomException implements Error {
   message: string;
+  name: string;
   statusCode: number;
   data?: Record<string, unknown>;
 
@@ -8,8 +9,6 @@ class CustomException extends Error {
     statusCode?: number,
     data?: Record<string, unknown>,
   ) {
-    super(message);
-
     this.message = message;
     this.statusCode = statusCode || 500;
     this.data = data;
