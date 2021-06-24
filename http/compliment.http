@@ -1,13 +1,14 @@
 @baseUrl = http://localhost:3001
 @contentType = application/json
-@baseEndPoint = users
+@baseEndPoint = compliments
 
 ### Create a user
 POST {{baseUrl}}/{{baseEndPoint}}
 Content-Type: {{contentType}}
 
 {
-  "name": "beutrano",
-  "email": "beutrano@test.com",
-  "password": "123456"
+  "message": "",
+  "tag_id": "",
+  "user_receive": "",
+  "user_sender": ""
 }
