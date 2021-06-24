@@ -1,3 +1,4 @@
+import { hash } from 'bcryptjs';
 import { getCustomRepository } from 'typeorm';
 
 import { CustomException } from '../exceptions/CustomException';
@@ -7,10 +8,11 @@ interface UserRequest {
   name: string;
   email: string;
   admin?: boolean;
+  password: string;
 }
 
 class CreateUserService {
-  async execute({ email, name, admin }: UserRequest) {
+  async execute({ email, name, admin, password }: UserRequest) {
     const usersRepositories = getCustomRepository(UsersRepositories);
 
     const userAlreadyExists = await usersRepositories.findOne({ email });
@@ -19,10 +21,13 @@ class CreateUserService {
       throw new CustomException('User already exists.', 400);
     }
 
+    const passwordHash = await hash(password, 10);
+
     const user = usersRepositories.create({
       name,
       email,
       admin,
+      password: passwordHash,
     });
 
     await usersRepositories.save(user);

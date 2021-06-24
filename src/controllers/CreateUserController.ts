@@ -7,13 +7,14 @@ const createUserSchema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().email().required(),
   admin: yup.boolean().notRequired(),
+  password: yup.string().min(6).required(),
 });
 
 class CreateUserController {
   async handle(request: Request, response: Response) {
     await createUserSchema.validate(request.body, { abortEarly: false });
 
-    const { name, email, admin } = request.body;
+    const { name, email, admin, password } = request.body;
 
     const createUserService = new CreateUserService();
 
@@ -21,6 +22,7 @@ class CreateUserController {
       name,
       email,
       admin,
+      password,
     });
 
     return response.status(201).json(user);
