@@ -1,12 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextFunction, Request, Response } from 'express';
 import { JsonWebTokenError } from 'jsonwebtoken';
+import { EntityColumnNotFound, QueryFailedError } from 'typeorm';
 import { ValidationError } from 'yup';
 
 import { CustomException } from '../exceptions/CustomException';
 
 function exceptionsHandle(
-  error: CustomException | ValidationError | SyntaxError | JsonWebTokenError,
+  error:
+    | CustomException
+    | ValidationError
+    | SyntaxError
+    | JsonWebTokenError
+    | QueryFailedError
+    | EntityColumnNotFound
+    | any,
   _request: Request,
   response: Response,
   _Next: NextFunction,
@@ -42,9 +50,23 @@ function exceptionsHandle(
     });
   }
 
+  if (error instanceof QueryFailedError) {
+    return response.status(400).json({
+      statusCode: 400,
+      message: error.message,
+    });
+  }
+
+  if (error instanceof EntityColumnNotFound) {
+    return response.status(400).json({
+      statusCode: 400,
+      message: error.message,
+    });
+  }
+
   return response.status(500).json({
     statusCode: 500,
-    message: 'Internal server error',
+    message: error.message || 'Internal server error',
   });
 }
 

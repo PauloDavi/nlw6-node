@@ -28,7 +28,7 @@ class AuthenticationUserService {
 
     const token = sign({ email: user.email }, process.env.JWT_SECRET, {
       subject: user.id,
-      expiresIn: '1d',
+      expiresIn: process.env.JWT_EXPIRES_IN,
     });
 
     return token;

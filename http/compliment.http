@@ -1,14 +1,16 @@
 @baseUrl = http://localhost:3001
 @contentType = application/json
 @baseEndPoint = compliments
+@authToken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNpY3Jhbm9AdGVzdC5jb20iLCJpYXQiOjE2MjQ1ODUxODAsImV4cCI6MTYyNDY3MTU4MCwic3ViIjoiMTUwNWNjODItYjE0ZC00ZGFlLTkyMGQtMWE3ZjJjZjczOWZjIn0.qykHPu_HCjPbXnG5c0WszLRjbbOyzoMeAS4al36XpRc
 
-### Create a user
+
+### Create a compliment
 POST {{baseUrl}}/{{baseEndPoint}}
 Content-Type: {{contentType}}
+Authorization: {{authToken}}
 
 {
-  "message": "",
-  "tag_id": "",
-  "user_receive": "",
-  "user_sender": ""
+  "message": "test1",
+  "tag_id": "6b2cf40f-2814-426a-b302-4928b5514e34",
+  "user_receiver": "30cd9d88-2508-4dba-8ee8-c88d1f1b37ac"
 }

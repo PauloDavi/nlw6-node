@@ -2,12 +2,17 @@
 @contentType = application/json
 @baseEndPoint = users
 
+### List users
+GET {{baseUrl}}/{{baseEndPoint}}
+Content-Type: {{contentType}}
+
 ### Create a user
 POST {{baseUrl}}/{{baseEndPoint}}
 Content-Type: {{contentType}}
 
 {
-  "name": "beutrano",
-  "email": "beutrano@test.com",
-  "password": "123456"
+  "name": "1sa",
+  "email": "1sa@test.com",
+  "password": "123456",
+  "admin": true
 }

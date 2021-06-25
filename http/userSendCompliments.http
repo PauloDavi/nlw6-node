@@ -1,0 +1,10 @@
+@baseUrl = http://localhost:3001
+@contentType = application/json
+@baseEndPoint = user/compliments/send
+@authToken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJldXRyYW5vQHRlc3QuY29tIiwiaWF0IjoxNjI0NTg1MzE2LCJleHAiOjE2MjQ2NzE3MTYsInN1YiI6ImY1NGU0OWExLWJmZmItNGQ2Mi04NDlkLWU2MzVjY2E3ZTI4NiJ9.v8y_48LWWEPSmAiLz-X1RLrFNbV0iBDV43yhxbNpfEs
+
+
+### Find completitions
+GET {{baseUrl}}/{{baseEndPoint}}
+Content-Type: {{contentType}}
+Authorization: {{authToken}}

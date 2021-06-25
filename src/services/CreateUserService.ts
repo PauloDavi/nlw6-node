@@ -1,4 +1,5 @@
 import { hash } from 'bcryptjs';
+import { classToPlain } from 'class-transformer';
 import { getCustomRepository } from 'typeorm';
 
 import { CustomException } from '../exceptions/CustomException';
@@ -32,7 +33,7 @@ class CreateUserService {
 
     await usersRepositories.save(user);
 
-    return user;
+    return classToPlain(user);
   }
 }
 
