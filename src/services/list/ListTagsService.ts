@@ -1,7 +1,7 @@
 import { classToPlain } from 'class-transformer';
 import { getCustomRepository } from 'typeorm';
 
-import { TagsRepositories } from '../repositories/TagsRepositories';
+import { TagsRepositories } from '../../repositories/TagsRepositories';
 
 class ListTagsService {
   async execute() {

@@ -2,8 +2,8 @@ import { hash } from 'bcryptjs';
 import { classToPlain } from 'class-transformer';
 import { getCustomRepository } from 'typeorm';
 
-import { CustomException } from '../exceptions/CustomException';
-import { UsersRepositories } from '../repositories/UsersRepositories';
+import { CustomException } from '../../exceptions/CustomException';
+import { UsersRepositories } from '../../repositories/UsersRepositories';
 
 interface UserRequest {
   name: string;

@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import * as yup from 'yup';
 
-import { GetUserService } from '../services/GetUserService';
+import { GetUserService } from '../../services/get/GetUserService';
 
 const getUserSchema = yup.object().shape({
-  user_id: yup.string().required(),
+  user_id: yup.string().uuid().required(),
 });
 
 class GetUserController {

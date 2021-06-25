@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
 
-import { ComplimentsRepositories } from '../repositories/ComplimentsRepositories';
+import { ComplimentsRepositories } from '../../repositories/ComplimentsRepositories';
 
 interface ListUserSendComplimentsRequest {
   user_id: string;

@@ -2,8 +2,8 @@ import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import { getCustomRepository } from 'typeorm';
 
-import { CustomException } from '../exceptions/CustomException';
-import { UsersRepositories } from '../repositories/UsersRepositories';
+import { CustomException } from '../../exceptions/CustomException';
+import { UsersRepositories } from '../../repositories/UsersRepositories';
 
 interface AuthenticationUserRequest {
   email: string;

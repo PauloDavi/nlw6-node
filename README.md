@@ -66,7 +66,8 @@ Seguindo as sugestões da última aula do nlw e algumas outras funcionalidades e
 - Validação com a biblioteca yup em todas as rotas
 - Eslint, prettier e editorconfig
 - Log das rotas com a biblioteca [morgan](https://www.npmjs.com/package/morgan)
-- Rotas de extra de get, put e dele de entidades
+- Rota de mudança de senha
+- Rotas de extra de GET, PUT e DELETE de entidades
 - Bibliotecas que otimizam a api compression, cors, helmet
 
 ---

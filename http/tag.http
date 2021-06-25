@@ -3,6 +3,11 @@
 @baseEndPoint = tags
 @authToken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNpY3Jhbm9AdGVzdC5jb20iLCJpYXQiOjE2MjQ1ODUwMTgsImV4cCI6MTYyNDY3MTQxOCwic3ViIjoiMTUwNWNjODItYjE0ZC00ZGFlLTkyMGQtMWE3ZjJjZjczOWZjIn0.BDhzzdnfNTpCj16JM-FApLZOmZnT414Sh4LaaNtPpak
 
+### Get a tag
+GET {{baseUrl}}/{{baseEndPoint}}/
+Content-Type: {{contentType}}
+Authorization: {{authToken}}
+
 ### List tags
 GET {{baseUrl}}/{{baseEndPoint}}
 Content-Type: {{contentType}}

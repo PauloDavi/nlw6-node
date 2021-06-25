@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import * as yup from 'yup';
 
-import { CreateUserService } from '../services/CreateUserService';
+import { CreateUserService } from '../../services/create/CreateUserService';
 
 const createUserSchema = yup.object().shape({
   name: yup.string().required(),

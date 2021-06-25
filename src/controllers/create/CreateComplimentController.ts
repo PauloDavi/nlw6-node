@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
 import * as yup from 'yup';
 
-import { CreateComplimentService } from '../services/CreateComplimentService';
+import { CreateComplimentService } from '../../services/create/CreateComplimentService';
 
 const createComplimentSchema = yup.object().shape({
   message: yup.string().required(),
-  tag_id: yup.string().required(),
-  user_receiver: yup.string().required(),
+  tag_id: yup.string().uuid().required(),
+  user_receiver: yup.string().uuid().required(),
 });
 
 class CreateComplimentController {

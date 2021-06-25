@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import * as yup from 'yup';
 
-import { AuthenticationUserService } from '../services/AuthenticationUserService';
+import { AuthenticationUserService } from '../../services/auth/AuthenticationUserService';
 
 const authenticationUserSchema = yup.object().shape({
   email: yup.string().required(),

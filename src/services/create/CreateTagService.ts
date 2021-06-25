@@ -1,7 +1,8 @@
+import { classToPlain } from 'class-transformer';
 import { getCustomRepository } from 'typeorm';
 
-import { CustomException } from '../exceptions/CustomException';
-import { TagsRepositories } from '../repositories/TagsRepositories';
+import { CustomException } from '../../exceptions/CustomException';
+import { TagsRepositories } from '../../repositories/TagsRepositories';
 
 interface TagRequest {
   name: string;
@@ -21,7 +22,7 @@ class CreateTagService {
 
     await tagsRepositories.save(tag);
 
-    return tag;
+    return classToPlain(tag);
   }
 }
 

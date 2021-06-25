@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import * as yup from 'yup';
 
-import { CreateTagService } from '../services/CreateTagService';
+import { CreateTagService } from '../../services/create/CreateTagService';
 
 const createTagSchema = yup.object().shape({
   name: yup.string().required(),

@@ -1,8 +1,8 @@
 import { getCustomRepository } from 'typeorm';
 
-import { CustomException } from '../exceptions/CustomException';
-import { ComplimentsRepositories } from '../repositories/ComplimentsRepositories';
-import { UsersRepositories } from '../repositories/UsersRepositories';
+import { CustomException } from '../../exceptions/CustomException';
+import { ComplimentsRepositories } from '../../repositories/ComplimentsRepositories';
+import { UsersRepositories } from '../../repositories/UsersRepositories';
 
 interface ComplimentRequest {
   tag_id: string;
