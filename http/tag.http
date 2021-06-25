@@ -1,11 +1,13 @@
 @baseUrl = http://localhost:3001
 @contentType = application/json
 @baseEndPoint = tags
+@authToken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJldXRyYW5vQHRlc3QuY29tIiwiaWF0IjoxNjI0NTgyMDk0LCJleHAiOjE2MjQ2Njg0OTQsInN1YiI6ImEzODU5MWZjLTc1NTYtNDViNi1iYTc4LTI2YTEzZmU2MjA0YyJ9.UPbL3Sql0_DHJSsaFAyRtuM3EYi-HjbNZOTb35hbc3E
 
 ### Create a tag
 POST {{baseUrl}}/{{baseEndPoint}}
 Content-Type: {{contentType}}
+Authorization: {{authToken}}
 
 {
-  "name": "teste"
+  "name": "otimista"
 }

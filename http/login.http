@@ -7,6 +7,6 @@ POST {{baseUrl}}/{{baseEndPoint}}
 Content-Type: {{contentType}}
 
 {
-  "email": "test@test.com",
+  "email": "beutrano@test.com",
   "password": "123456"
 }
