@@ -5,9 +5,16 @@
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "baseUrl": "./src",
     "forceConsistentCasingInFileNames": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "declaration": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "incremental": true,
     "typeRoots": ["./src/@types"]
   }
 }
