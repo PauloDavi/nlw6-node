@@ -24,9 +24,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Typescript](https://www.typescriptlang.org/)
 - [JSONWebToken](https://github.com/auth0/node-jsonwebtoken#readme)
-- [compression](https://www.npmjs.com/package/compression)
-- [cors](https://www.npmjs.com/package/cors)
-- [helmet](https://www.npmjs.com/package/helmet)
+- [Compression](https://www.npmjs.com/package/compression)
+- [Cors](https://www.npmjs.com/package/cors)
+- [Helmet](https://www.npmjs.com/package/helmet)
 
 ## 💻 Projeto
 
